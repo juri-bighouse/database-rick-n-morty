@@ -2,12 +2,14 @@
 import './App.css';
 import React from 'react';
 import Header from './Components/Header/Header.js';
+import Grid from './Components/Grid/Grid.js';
+
 
 function App() {
   return (
     <div className="App">
-     <div className="container"></div>
      <Header />
+     <Grid />
     </div>
   );
 }
