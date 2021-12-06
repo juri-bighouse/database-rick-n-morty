@@ -1,10 +1,13 @@
 
 import './App.css';
+import React from 'react';
+import Header from './Components/Header/Header.js';
 
 function App() {
   return (
     <div className="App">
-     <h2>comado io cazzo</h2>
+     <div className="container"></div>
+     <Header />
     </div>
   );
 }
