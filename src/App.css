@@ -2,5 +2,7 @@
     width: 100%;
     max-width: 1266px;
     margin: auto;
+    box-sizing: border-box;
+    padding: 0 24px;
     
 }
