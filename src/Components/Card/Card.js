@@ -17,6 +17,7 @@ function Card({character}) {
                     {character.species} <span className="card-info__generic">from</span> {character.location.name}
                 </p>
             </div>
+            <button className="favorite">add</button>
         </div>
     );
 }
