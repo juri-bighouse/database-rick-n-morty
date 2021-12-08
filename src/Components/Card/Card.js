@@ -4,9 +4,13 @@ import PropTypes from 'prop-types';
 
 
 
-function Card({character}) {
+function Card({character,isSelected,onSelectChange}) {
+    const onClickButton = () => {
+        onSelectChange(character.id, isSelected);
+    }
+    const selectedClass = (isSelected ? "selected" : "");
     return (
-        <div className="card">
+        <div className={'card '+ selectedClass}>
             <img src={character.image} alt={character.name} />
             <div className="card-info">
                 <p class="card-info__name">
@@ -17,11 +21,15 @@ function Card({character}) {
                     {character.species} <span className="card-info__generic">from</span> {character.location.name}
                 </p>
             </div>
-            <button className="favorite">add</button>
+            <button className="favorite" onClick={onClickButton}>
+                {isSelected ? "Remove":"Add"}
+                </button>
         </div>
     );
 }
 Card.prototype = {
-    character: PropTypes.object.isRequired
+    character: PropTypes.object.isRequired,
+    isSelected: PropTypes.bool.isRequired,
+    onSelectChange: PropTypes.func.isRequired
 };
 export default Card;
